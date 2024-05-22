@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PID="$1"
+
+./client "$PID" "COUCOUCUCUCUUCUCUCUU" &
+./client "$PID" "HSFUHFSUIHF IHSIHSFHFSIU HUSFHIUFSHIFSU HIUSFHUIsfsffs" &
+
+wait
