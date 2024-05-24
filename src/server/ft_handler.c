@@ -17,6 +17,7 @@ void	extend_handler(t_client *current_client, pid_t current_pid,
 {
 	current_client->bit_received++;
 	current_client->bit++;
+  ft_printf("%d\n", current_client->bit_received);
 	if (current_client->bit == 8)
 	{
 		current_client->message = ft_strjoin_frees1(current_client->message,
