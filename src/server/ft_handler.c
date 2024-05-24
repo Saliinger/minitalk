@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:12:23 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/24 16:54:06 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/24 16:58:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	extend_handler(t_client *current_client, pid_t current_pid,
 {
 	current_client->bit_received++;
 	current_client->bit++;
-  ft_printf("%d\n", current_client->bit_received);
 	if (current_client->bit == 8)
 	{
 		current_client->message = ft_strjoin_frees1(current_client->message,
