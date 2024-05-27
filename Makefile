@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = client
 NAME_SERVER = server
-NAME_CLIENT = client
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 SRC_DIR= ./src
@@ -45,11 +45,11 @@ MAKE_LIBFT = make -C libft
 
 .PHONY: all clean fclean re
 
-all: $(NAME_CLIENT) $(NAME_SERVER)
+all: $(NAME) $(NAME_SERVER)
 
-$(NAME_CLIENT): $(OBJ_CLIENT) $(OBJ_FUNC) 
+$(NAME): $(OBJ_CLIENT) $(OBJ_FUNC) 
 	$(MAKE_LIBFT)
-	$(CC) $(CFLAGS) $(OBJ_CLIENT) $(OBJ_FUNC) $(LIBFT) -o $(NAME_CLIENT)
+	$(CC) $(CFLAGS) $(OBJ_CLIENT) $(OBJ_FUNC) $(LIBFT) -o $(NAME)
 
 $(NAME_SERVER): $(OBJ_SERVER) $(OBJ_FUNC) 
 	$(MAKE_LIBFT)
@@ -60,7 +60,7 @@ clean:
 	$(MAKE_LIBFT) clean
 
 fclean: clean
-	rm -f $(NAME_SERVER) $(NAME_CLIENT)
+	rm -f $(NAME_SERVER) $(NAME)
 	$(MAKE_LIBFT) fclean
 
 re: fclean all

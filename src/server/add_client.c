@@ -21,8 +21,9 @@ void	add_client(t_client **waitlist, pid_t pid)
 	new = (t_client *)malloc(sizeof(t_client));
 	if (!new)
 	{
-		printf("!new\n");
+		ft_printf("!new\n");
 		free_waitlist(waitlist);
+        return ;
 	}
 	new->current_char = (char *)malloc(sizeof(char) * 2);
 	if (!new->current_char)

@@ -33,17 +33,17 @@ char	*ft_strjoin_frees1(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
-	char	*d;
+	char	*dest;
 
 	if (!s1 || !s2)
 		return (NULL);
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
-	d = (char *)malloc(i + j + 1);
-	if (d == NULL)
+	dest = (char *)malloc(i + j + 1);
+	if (dest == NULL)
 		return (free(s1), s1 = NULL, free(s2), s2 = NULL, NULL);
-	ft_strcpy(d, (char *)s1);
-	ft_strcpy(d + i, (char *)s2);
+	ft_strcpy(dest, (char *)s1);
+	ft_strcpy(dest + i, (char *)s2);
 	free(s1);
-	return (d);
+	return (dest);
 }

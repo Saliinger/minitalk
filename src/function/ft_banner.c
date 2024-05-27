@@ -34,10 +34,10 @@ static void	client_banner(pid_t pid)
 	ft_printf("\npid of the client : %d\n", pid);
 }
 
-void	ft_banner(int i, pid_t pid)
+void	ft_banner(int app, pid_t pid)
 {
-	if (i == 0)
+	if (app == CLIENT)
 		client_banner(pid);
-	else if (i == 1)
+    else if (app == SERVER)
 		server_banner(pid);
 }

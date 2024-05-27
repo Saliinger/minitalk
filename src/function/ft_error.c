@@ -12,17 +12,16 @@
 
 #include "../../includes/minitalk.h"
 
-void	ft_error(int i)
+void	ft_error(int app)
 {
-	if (i == 0)
+	if (app == CLIENT)
 	{
-		ft_printf("client: error");
+		ft_printf("client: error\n");
 		exit(EXIT_FAILURE);
 	}
-	else if (i == 1)
+	else if (app == SERVER)
 	{
-		ft_printf("server: error");
+		ft_printf("server: error\n");
 		exit(EXIT_FAILURE);
 	}
-	return ;
 }
