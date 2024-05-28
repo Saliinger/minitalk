@@ -24,6 +24,8 @@ int	main(int argc, char **argv)
 		signal(SIGUSR1, client_handler);
 		signal(SIGUSR2, client_handler);
 		server_pid = ft_atoi(argv[1]);
+        if (server_pid > INT_MAX || server_pid < 0)
+            ft_error(CLIENT);
 		ft_send_message(argv[2], server_pid);
 	}
 	else

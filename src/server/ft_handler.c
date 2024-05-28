@@ -17,6 +17,7 @@ void	extend_handler(t_client *current_client, pid_t current_pid,
 {
 	current_client->bit_received++;
 	current_client->bit++;
+    ft_printf("bit received : %d\n", current_client->bit_received);
 	if (current_client->bit == 8)
 	{
 		current_client->message = ft_strjoin_frees1(current_client->message,
@@ -25,7 +26,7 @@ void	extend_handler(t_client *current_client, pid_t current_pid,
 		if (current_client->current_char[0] == '\0')
 		{
 			print_message(current_client, waitlist);
-			usleep(200);
+			usleep(500);
 			kill(current_pid, SIGUSR2);
 		}
 		else
@@ -33,7 +34,7 @@ void	extend_handler(t_client *current_client, pid_t current_pid,
 	}
 	else
 		current_client->current_char[0] <<= 1;
-	usleep(200);
+	usleep(500);
 	if (kill(current_pid, SIGUSR1) == -1)
 		remove_client(current_client, waitlist);
 }
@@ -57,6 +58,7 @@ void	server_handler(int signum, siginfo_t *info, void *context)
 			ft_error(1);
 		}
 	}
+    ft_printf("Received signal: %d from PID: %d\n", signum, info->si_pid);
 	current_client->current_char[0] |= (signum == SIGUSR1);
 	extend_handler(current_client, info->si_pid, waitlist);
 }

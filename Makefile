@@ -13,7 +13,7 @@
 NAME = client
 NAME_SERVER = server
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 SRC_DIR= ./src
 C_DIR= $(SRC_DIR)/client
 S_DIR= $(SRC_DIR)/server
