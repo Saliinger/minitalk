@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:12:23 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/24 16:58:16 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/31 13:24:17 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	extend_handler(t_client *current_client, pid_t current_pid,
 {
 	current_client->bit_received++;
 	current_client->bit++;
-    ft_printf("bit received : %d\n", current_client->bit_received);
 	if (current_client->bit == 8)
 	{
 		current_client->message = ft_strjoin_frees1(current_client->message,
@@ -58,7 +57,6 @@ void	server_handler(int signum, siginfo_t *info, void *context)
 			ft_error(1);
 		}
 	}
-    ft_printf("Received signal: %d from PID: %d\n", signum, info->si_pid);
 	current_client->current_char[0] |= (signum == SIGUSR1);
 	extend_handler(current_client, info->si_pid, waitlist);
 }

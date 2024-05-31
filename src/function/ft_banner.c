@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 12:15:50 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/21 13:05:42 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/31 13:23:58 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ void	ft_banner(int app, pid_t pid)
 {
 	if (app == CLIENT)
 		client_banner(pid);
-    else if (app == SERVER)
+	else if (app == SERVER)
 		server_banner(pid);
 }

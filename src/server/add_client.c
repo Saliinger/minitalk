@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:13:07 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/21 13:27:56 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/31 13:24:05 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	add_client(t_client **waitlist, pid_t pid)
 	{
 		ft_printf("!new\n");
 		free_waitlist(waitlist);
-        return ;
+		return ;
 	}
 	new->current_char = (char *)malloc(sizeof(char) * 2);
 	if (!new->current_char)

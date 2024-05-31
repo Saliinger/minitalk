@@ -19,8 +19,8 @@
 # include <sys/types.h>
 
 //---Variables---
-#define CLIENT 0
-#define SERVER 1
+# define CLIENT 0
+# define SERVER 1
 
 //---Structure---
 typedef struct s_client
