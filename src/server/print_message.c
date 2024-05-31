@@ -12,7 +12,7 @@
 
 #include "../../includes/minitalk.h"
 
-void	print_message(t_client *client, t_client **waitlist)
+void	print_message(t_client *client, t_client *waitlist)
 {
 	if (client)
 	{

@@ -12,12 +12,12 @@
 
 #include "../../includes/minitalk.h"
 
-void	free_waitlist(t_client **waitlist)
+void	free_waitlist(t_client *waitlist)
 {
 	t_client	*temp;
 	t_client	*buffer;
 
-	temp = *waitlist;
+	temp = waitlist;
 	while (temp)
 	{
 		free(temp->current_char);
@@ -26,6 +26,5 @@ void	free_waitlist(t_client **waitlist)
 		temp = temp->next;
 		free(buffer);
 	}
-	free(waitlist);
 	ft_error(0);
 }

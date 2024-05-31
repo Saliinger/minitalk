@@ -36,13 +36,13 @@ typedef struct s_client
 //---Server---
 void		server_handler(int signum, siginfo_t *info, void *context);
 void		extend_handler(t_client *current_client, pid_t current_pid, \
-t_client **waitlist);
-t_client	**init_waitlist(void);
-void		print_message(t_client *client, t_client **waitlist);
-void		add_client(t_client **waitlist, pid_t pid);
-t_client	*find_client(pid_t client, t_client **list);
-void		free_waitlist(t_client **waitlist);
-void		remove_client(t_client *to_remove, t_client **waitlist);
+t_client *waitlist);
+t_client	*init_waitlist(void);
+void		print_message(t_client *client, t_client *waitlist);
+void		add_client(t_client *waitlist, pid_t pid);
+t_client	*find_client(pid_t client, t_client *list);
+void		free_waitlist(t_client *waitlist);
+void		remove_client(t_client *to_remove, t_client *waitlist);
 
 //---t_client---
 void		ft_send_char(char c, pid_t server_pid);

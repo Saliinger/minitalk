@@ -12,13 +12,13 @@
 
 #include "../../includes/minitalk.h"
 
-void	remove_client(t_client *to_remove, t_client **waitlist)
+void	remove_client(t_client *to_remove, t_client *waitlist)
 {
 	t_client	*temp;
 	t_client	*prev;
 	t_client	*next;
 
-	temp = *waitlist;
+	temp = waitlist;
 	prev = NULL;
 	while (temp && temp != to_remove)
 	{
@@ -29,7 +29,7 @@ void	remove_client(t_client *to_remove, t_client **waitlist)
 		return ;
 	next = temp->next;
 	if (prev == NULL)
-		*waitlist = next;
+		waitlist = next;
 	else
 		prev->next = next;
 	free(to_remove->current_char);

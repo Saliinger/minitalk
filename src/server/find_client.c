@@ -12,13 +12,13 @@
 
 #include "../../includes/minitalk.h"
 
-t_client	*find_client(pid_t client, t_client **list)
+t_client	*find_client(pid_t client, t_client *list)
 {
 	t_client	*temp;
 
-	if (!*list)
+	if (!list)
 		return (NULL);
-	temp = *list;
+	temp = list;
 	while (temp)
 	{
 		if (temp->pid == client)

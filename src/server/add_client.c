@@ -12,12 +12,12 @@
 
 #include "../../includes/minitalk.h"
 
-void	add_client(t_client **waitlist, pid_t pid)
+void	add_client(t_client *waitlist, pid_t pid)
 {
 	t_client	*new;
 	t_client	*top;
 
-	top = *waitlist;
+	top = waitlist;
 	new = (t_client *)malloc(sizeof(t_client));
 	if (!new)
 	{
@@ -36,5 +36,5 @@ void	add_client(t_client **waitlist, pid_t pid)
 	new->bit = 0;
 	new->bit_received = 0;
 	new->next = top;
-	*waitlist = new;
+	waitlist = new;
 }

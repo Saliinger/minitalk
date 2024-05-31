@@ -13,7 +13,7 @@
 #include "../../includes/minitalk.h"
 
 void	extend_handler(t_client *current_client, pid_t current_pid,
-		t_client **waitlist)
+		t_client *waitlist)
 {
 	current_client->bit_received++;
 	current_client->bit++;
@@ -41,12 +41,12 @@ void	extend_handler(t_client *current_client, pid_t current_pid,
 
 void	server_handler(int signum, siginfo_t *info, void *context)
 {
-	static t_client	**waitlist;
+	static t_client	*waitlist;
 	t_client		*current_client;
 
 	(void)context;
 	if (!waitlist)
-		waitlist = init_waitlist();
+		waitlist = NULL;
 	current_client = find_client(info->si_pid, waitlist);
 	if (current_client == NULL)
 	{
